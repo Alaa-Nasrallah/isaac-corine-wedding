@@ -1,0 +1,13 @@
+{
+  "name": "isaac-corine-wedding",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node server/index.js",
+    "sync-guests": "node server/sync-guests-from-live.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

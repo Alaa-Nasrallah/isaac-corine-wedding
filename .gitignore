@@ -1,0 +1,7 @@
+node_modules/
+.env
+.env.*
+server/sync-log.txt
+*.log
+.DS_Store
+Thumbs.db

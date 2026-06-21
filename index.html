@@ -1,0 +1,794 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light only">
+    <title>Isaac &amp; Corine Wedding</title>
+    <meta name="description" content="Isaac & Corine Wedding - June 20, 2026">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Great+Vibes&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./style.css?v=bfb303f9">
+  </head>
+
+  <body>
+    <!-- ========== INTRO OVERLAY ========== -->
+    <div id="intro-overlay">
+      <video
+        id="intro-video"
+        src="./assets/intro-letter.mp4?v=bfb303f9"
+        poster="./assets/intro-letter-poster.jpg?v=bfb303f9"
+        playsinline
+        muted
+        preload="metadata"
+      ></video>
+      <div id="intro-prompt">
+        <span class="intro-prompt-tap">Tap to open</span>
+      </div>
+    </div>
+
+    <!-- ========== MUSIC TOGGLE ========== -->
+    <button id="music-toggle" class="hidden" aria-label="Toggle music">
+      <svg id="music-icon-on" class="music-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M9 18V5l12-2v13"/>
+        <circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>
+      </svg>
+      <svg id="music-icon-off" class="music-icon hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M9 18V5l12-2v13"/>
+        <circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>
+        <line x1="1" y1="1" x2="23" y2="23" stroke-width="2"/>
+      </svg>
+    </button>
+    <audio id="bg-music" src="./assets/song.m4a?v=bfb303f9" loop preload="auto"></audio>
+
+    <!-- ========== NAVIGATION ========== -->
+    <nav id="main-nav" class="hidden">
+      <div class="nav-inner">
+        <a href="#hero" class="nav-brand">I &amp; C</a>
+        <button id="nav-hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+        <ul id="nav-links">
+          <li><a href="#invitation">Invitation</a></li>
+          <li><a href="#countdown">Countdown</a></li>
+          <li><a href="#location">Location</a></li>
+          <li><a href="#schedule">Schedule</a></li>
+          <li><a href="#accommodation">Travel</a></li>
+          <li><a href="#discover">Discover</a></li>
+          <li><a href="#gifts">Gifts</a></li>
+          <li><a href="#rsvp">RSVP</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- ========== MAIN CONTENT ========== -->
+    <main id="main-content" class="hidden">
+
+      <!-- HERO: Birds GIF -->
+      <section id="hero" class="section-hero">
+        <div class="hero-gif-wrapper">
+          <video src="./assets/hero-birds.mp4?v=bfb303f9" autoplay loop muted playsinline class="hero-gif"></video>
+        </div>
+        <div class="hero-overlay-text fade-in">
+          <span class="hero-names">Isaac &amp; Corine</span>
+          <span class="hero-date-line">20 . 06 . 2026</span>
+        </div>
+      </section>
+
+      <!-- SECTION 1: INVITATION -->
+      <section id="invitation" class="section">
+        <div class="section-inner invitation-content fade-in">
+          <img src="./assets/rings-illustration-tO3OeALU.webp?v=bfb303f9" alt="" loading="lazy" class="section-illustration small">
+          <div class="ornament">&#9825;</div>
+          <p class="invitation-parents">
+            Mr. Johnny &amp; Mrs Jeanne-Marie Corm
+          </p>
+          <p class="invitation-along">along with</p>
+          <p class="invitation-parents">
+            Mr. Tony &amp; Mrs. Amal Freiha
+          </p>
+          <p class="invitation-request invitation-request-small">
+            request the honor of your presence<br>
+            at the wedding of their son and daughter
+          </p>
+
+          <div class="couple-names">
+            <span class="name-script">Isaac</span>
+            <span class="name-ampersand">&amp;</span>
+            <span class="name-script">Corine</span>
+          </div>
+
+          <div class="invitation-divider">
+            <span class="divider-line"></span>
+            <span class="divider-diamond">&#10022;</span>
+            <span class="divider-line"></span>
+          </div>
+
+          <p class="invitation-date">
+            Saturday, the twentieth of June<br>
+            two thousand twenty-six
+          </p>
+          <p class="invitation-detail">
+            The ceremony will be held at half past five in the evening
+          </p>
+
+          <div class="invitation-venue">
+            <h3>St Simon Church</h3>
+            <p>Ghosta</p>
+          </div>
+
+          <p class="invitation-detail">
+            A dinner reception will follow<br>
+            at eight o'clock in the evening
+          </p>
+
+          <div class="invitation-venue">
+            <h3>Chateau Rweiss</h3>
+            <p>Chnaniir</p>
+          </div>
+
+          <div class="ornament">&#9825;</div>
+        </div>
+      </section>
+
+      <!-- SECTION 2: COUNTDOWN -->
+      <section id="countdown" class="section section-alt">
+        <canvas id="fireworks-canvas"></canvas>
+        <div class="section-inner">
+          <img src="./assets/champagne-illustration-CplOg0Lb.webp?v=bfb303f9" alt="" loading="lazy" class="section-illustration medium fade-in">
+          <h2 class="section-title fade-in">Countdown</h2>
+          <p class="section-subtitle fade-in" id="countdown-subtitle">Until we celebrate together</p>
+          <div class="countdown-grid fade-in" id="countdown-grid">
+            <div class="countdown-card">
+              <span id="cd-days" class="countdown-number">000</span>
+              <span class="countdown-label">Days</span>
+            </div>
+            <div class="countdown-card">
+              <span id="cd-hours" class="countdown-number">00</span>
+              <span class="countdown-label">Hours</span>
+            </div>
+            <div class="countdown-card">
+              <span id="cd-minutes" class="countdown-number">00</span>
+              <span class="countdown-label">Minutes</span>
+            </div>
+            <div class="countdown-card">
+              <span id="cd-seconds" class="countdown-number">00</span>
+              <span class="countdown-label">Seconds</span>
+            </div>
+          </div>
+          <p id="countdown-celebration" class="countdown-celebration hidden">The celebration has begun!</p>
+        </div>
+      </section>
+
+      <!-- SECTION 3: LOCATION / MAPS -->
+      <section id="location" class="section">
+        <div class="section-inner">
+          <h2 class="section-title fade-in">Location</h2>
+
+          <div class="locations-grid">
+            <!-- Ceremony -->
+            <div class="location-card fade-in">
+              <div class="location-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="40" height="40">
+                  <path d="M18 21H6a1 1 0 01-1-1v-7.37a1 1 0 01.45-.84L12 7l6.55 4.79a1 1 0 01.45.84V20a1 1 0 01-1 1z"/>
+                  <path d="M12 3v4M9 21v-4h6v4M12 7L3 13M12 7l9 6"/>
+                  <path d="M12 3l-1.5 1.5M12 3l1.5 1.5"/>
+                </svg>
+              </div>
+              <h3 class="location-name">St Simon Church</h3>
+              <p class="location-type">Ceremony</p>
+              <p class="location-address">Ghosta, Lebanon</p>
+              <div class="location-map">
+                <iframe
+                  src="https://maps.google.com/maps?q=St+Simon+Church+Ghosta+Lebanon&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                  width="100%" height="250" style="border:0; border-radius: 8px;" allowfullscreen loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div>
+              <a href="https://maps.app.goo.gl/otE6Xrh9mTWNcGKv5" target="_blank" rel="noopener" class="btn btn-outline">
+                Get Directions
+              </a>
+            </div>
+
+            <!-- Reception -->
+            <div class="location-card fade-in">
+              <div class="location-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="40" height="40">
+                  <path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/>
+                  <rect x="9" y="9" width="2" height="2"/><rect x="13" y="9" width="2" height="2"/>
+                </svg>
+              </div>
+              <h3 class="location-name">Chateau Rweiss</h3>
+              <p class="location-type">Dinner Reception</p>
+              <p class="location-address">Chnaniir, Lebanon</p>
+              <div class="location-map">
+                <iframe
+                  src="https://maps.google.com/maps?q=Chateau+Rweiss+Chnaniir+Lebanon&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                  width="100%" height="250" style="border:0; border-radius: 8px;" allowfullscreen loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div>
+              <a href="https://maps.app.goo.gl/iyVH4mhKM9Xcf4kg9" target="_blank" rel="noopener" class="btn btn-outline">
+                Get Directions
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 4: SCHEDULE -->
+      <section id="schedule" class="section section-alt">
+        <div class="section-inner">
+          <div class="section-scene fade-in">
+            <img src="./assets/ball-dance.webp?v=bfb303f9" alt="" loading="lazy">
+          </div>
+          <h2 class="section-title fade-in">Schedule</h2>
+          <p class="section-subtitle fade-in">The order of celebration</p>
+
+          <!-- OPTION A: Timeline layout -->
+          <div class="timeline fade-in">
+            <div class="timeline-item">
+              <div class="timeline-time">5:30 PM</div>
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <h4>Traditional Walk</h4>
+                <p>A traditional walk to the church</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-time"></div>
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <h4>Ceremony</h4>
+                <p>St Simon Church, Ghosta</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-time">7:00 PM</div>
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <h4>Guest Arrival</h4>
+                <p>Chateau Rweiss, Chnaniir</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-time"></div>
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <h4>Welcome Drink</h4>
+                <p>Cocktail hour</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-time">8:00 PM</div>
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <h4>Dinner Reception</h4>
+                <p>Dinner, toasts, and celebration</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-time">1:00 AM</div>
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <h4>After Party</h4>
+                <p>Dance the night away</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- SECTION 5: ACCOMMODATION -->
+      <section id="accommodation" class="section">
+        <div class="section-inner">
+          <h2 class="section-title fade-in">Travel &amp; Stay</h2>
+          <p class="section-subtitle fade-in">Everything you need for your visit to Lebanon</p>
+
+          <!-- WHERE TO STAY -->
+          <div class="acc-block fade-in">
+            <h3 class="acc-heading">Where to Stay</h3>
+            <div class="acc-card-row">
+              <a href="https://www.omonot.com/" target="_blank" rel="noopener" class="stay-card">O Monot</a>
+              <a href="https://www.saifisuites.com/" target="_blank" rel="noopener" class="stay-card">Saifi Suites</a>
+              <a href="https://arthaus.international/your-stay/beirut/" target="_blank" rel="noopener" class="stay-card">Arthaus Beirut</a>
+              <a href="https://www.albergobeirut.com/" target="_blank" rel="noopener" class="stay-card">Albergo</a>
+              <a href="https://saintgeorgebeirut.com/" target="_blank" rel="noopener" class="stay-card">Saint George Hotel &amp; Resort</a>
+              <a href="#" target="_blank" rel="noopener" class="stay-card">Lost</a>
+              <a href="#" target="_blank" rel="noopener" class="stay-card">Vocco</a>
+            </div>
+            <p class="acc-note">Contact us for special Isaac &amp; Corine rates</p>
+          </div>
+
+          <!-- RESTAURANTS -->
+          <div class="acc-block fade-in">
+            <h3 class="acc-heading">Restaurants &amp; Nightlife</h3>
+
+            <div class="accordion" data-accordion>
+              <!-- Lebanese -->
+              <div class="accordion-item">
+                <button class="accordion-trigger" type="button">
+                  <span>Lebanese Cuisines</span>
+                  <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+                <div class="accordion-content">
+                  <ul class="acc-list">
+                    <li>Liza</li>
+                    <li>Em Sherif Cafe</li>
+                    <li>Em Sherif Sea</li>
+                    <li>Beit Kanz</li>
+                    <li>Al Sultan Brahim</li>
+                    <li>Al Khawaja</li>
+                    <li>Mhanna sur Mer</li>
+                    <li>Leila Zaitunay Bay</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- International - Lunch -->
+              <div class="accordion-item">
+                <button class="accordion-trigger" type="button">
+                  <span>International Cuisines &mdash; Lunch</span>
+                  <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+                <div class="accordion-content">
+                  <ul class="acc-list">
+                    <li>Paname</li>
+                    <li>Malibou</li>
+                    <li>Meat the Fish</li>
+                    <li>PizzaWa</li>
+                    <li>Ginette</li>
+                    <li>Maison Prunelle</li>
+                    <li>Al Mandaloun</li>
+                    <li>Bar Tartine</li>
+                    <li>Tavolina</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- International - Dinner -->
+              <div class="accordion-item">
+                <button class="accordion-trigger" type="button">
+                  <span>International Cuisines &mdash; Dinner</span>
+                  <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+                <div class="accordion-content">
+                  <ul class="acc-list two-col">
+                    <li>Arthaus Beirut</li>
+                    <li>Albergo</li>
+                    <li>Le Sushi Bar</li>
+                    <li>The Terrible Prince</li>
+                    <li>Le Petit Gris</li>
+                    <li>Baron</li>
+                    <li>Buco</li>
+                    <li>Centrale</li>
+                    <li>Le Zed</li>
+                    <li>Burgundy</li>
+                    <li>Kampai</li>
+                    <li>Mitsu-Ya</li>
+                    <li>Marly's</li>
+                    <li>Mayrig</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Beach -->
+              <div class="accordion-item">
+                <button class="accordion-trigger" type="button">
+                  <span>Beach Restaurants</span>
+                  <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+                <div class="accordion-content">
+                  <ul class="acc-list">
+                    <li>Fidar Beach House</li>
+                    <li>Sporting Club</li>
+                    <li>BDP Beach</li>
+                    <li>Butlers Beach Club</li>
+                    <li>A la Pier Batroun</li>
+                    <li>Bebabel Batroun Bahsa</li>
+                    <li>Almaza Bay</li>
+                    <li>Le Canoe</li>
+                    <li>Paradiso Eddesands</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Mountain -->
+              <div class="accordion-item">
+                <button class="accordion-trigger" type="button">
+                  <span>Mountain Restaurants</span>
+                  <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+                <div class="accordion-content">
+                  <ul class="acc-list">
+                    <li>Le Montagnou</li>
+                    <li>Ixsir Winery</li>
+                    <li>Berdawni Zahle</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Bars -->
+              <div class="accordion-item">
+                <button class="accordion-trigger" type="button">
+                  <span>Bars &amp; Nightlife</span>
+                  <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+                <div class="accordion-content">
+                  <ul class="acc-list two-col">
+                    <li>Cyrano &ndash; Le Coin de l'Apero</li>
+                    <li>House of Butlers</li>
+                    <li>Albergo Swim Club</li>
+                    <li>Capitole by Analogue</li>
+                    <li>Analogue Biel</li>
+                    <li>Centrale Rooftop Bar</li>
+                    <li>Futomama</li>
+                    <li>Clap</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Nightclub -->
+              <div class="accordion-item">
+                <button class="accordion-trigger" type="button">
+                  <span>Nightclubs</span>
+                  <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+                <div class="accordion-content">
+                  <ul class="acc-list">
+                    <li>Capitole</li>
+                    <li>Analogue</li>
+                    <li>Musichall</li>
+                    <li>Club Soda</li>
+                    <li>AHM</li>
+                    <li>Skybar</li>
+                    <li>Odin <span class="acc-tag">Outside Beirut</span></li>
+                    <li>Almaza Bay <span class="acc-tag">Beach</span></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- DISCOVER LEBANON CTA -->
+          <div id="discover-cta" class="acc-block fade-in" style="text-align:center; margin-bottom: 3.5rem;">
+            <h3 class="acc-heading">Discover Lebanon</h3>
+            <p class="acc-note" style="margin-bottom:1.25rem;">Explore the beauty of this ancient land while you're here</p>
+            <a href="#discover" class="btn btn-primary">Explore Destinations</a>
+          </div>
+
+          <!-- GOOD TO KNOW -->
+          <div class="acc-block fade-in">
+            <h3 class="acc-heading">Good to Know</h3>
+            <div class="good-to-know-grid">
+              <div class="gtk-card">
+                <div class="gtk-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 8h20"/><circle cx="6" cy="14" r="1.5"/><path d="M10 12h6M10 16h4"/></svg>
+                </div>
+                <h4>Cash</h4>
+                <p>Have cash (USD) on hand</p>
+              </div>
+              <div class="gtk-card">
+                <div class="gtk-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 12a4 4 0 008 0"/><path d="M12 2v4M12 18v4"/></svg>
+                </div>
+                <h4>Water</h4>
+                <p>Don't drink tap water</p>
+              </div>
+              <div class="gtk-card">
+                <div class="gtk-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17h14M7 11V7a5 5 0 0110 0v4"/><rect x="4" y="11" width="16" height="6" rx="2"/><circle cx="12" cy="14" r="1"/></svg>
+                </div>
+                <h4>Transportation</h4>
+                <p>Alo Taxi for local rides</p>
+              </div>
+              <div class="gtk-card">
+                <div class="gtk-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 00-4 4c0 3 4 5 4 5s4-2 4-5a4 4 0 00-4-4z"/><path d="M5 21c0-4 3-7 7-7s7 3 7 7"/><path d="M9 13l-2 2M15 13l2 2"/></svg>
+                </div>
+                <h4>Hair &amp; Makeup</h4>
+                <ul class="gtk-list">
+                  <li>Coiffe Moi by Riad and Jean</li>
+                  <li>Dessange</li>
+                  <li>Tony El Mendelek</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- SECTION 6: GIFTS -->
+      <section id="gifts" class="section section-alt">
+        <div class="section-inner gifts-content">
+          <div class="ornament fade-in">&#10022;</div>
+
+          <h2 class="section-title fade-in">Our Registry</h2>
+          <p class="section-subtitle fade-in">We can't wait to celebrate this special day with you. Your presence truly is the greatest gift of all, but for those who wish, a wedding registry is available below.</p>
+
+          <div class="gift-card fade-in">
+            <div class="gift-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="48" height="48">
+                <rect x="3" y="8" width="18" height="13" rx="1"/>
+                <path d="M12 8v13M3 12h18"/>
+                <path d="M12 8c-1.5-2-4-3.5-5-2.5s0 3.5 5 5.5c5-2 6.5-4.5 5-5.5s-3.5.5-5 2.5z"/>
+              </svg>
+            </div>
+            <h3>Bank Account Details</h3>
+            <button id="gift-reveal-btn" class="btn btn-outline gift-reveal-btn" type="button" data-gift-target="gift-details">View Details</button>
+            <div id="gift-details" class="gift-details gift-details-hidden">
+              <div class="gift-region">
+                <span class="gift-region-label">Lebanese Accounts</span>
+                <dl class="bank-details">
+                  <div class="bank-row"><dt>Beneficiary Name</dt><dd>Isaac Corm</dd></div>
+                  <div class="bank-row"><dt>Bank</dt><dd>BLOM Bank</dd></div>
+                  <!-- <div class="bank-row"><dt>Branch</dt><dd>Ghasir Branch, Lebanon</dd></div> -->
+                  <div class="bank-row"><dt>Account No.</dt><dd>1737018</dd></div>
+                  <div class="bank-row"><dt>IBAN</dt><dd>LB75 0014 0000 5902 6731 7370 1816</dd></div>
+                  <div class="bank-row"><dt>BIC / SWIFT</dt><dd>BLOMLBBX</dd></div>
+                </dl>
+              </div>
+              <div class="gift-region">
+                <span class="gift-region-label">International Accounts</span>
+                <dl class="bank-details">
+                  <div class="bank-row"><dt>Account Holder</dt><dd>Isaac Corm</dd></div>
+                  <div class="bank-row"><dt>Account Number</dt><dd>8312130374</dd></div>
+                  <div class="bank-row"><dt>Routing Number</dt><dd>026073150</dd></div>
+                  <div class="bank-row"><dt>SWIFT / BIC</dt><dd>CMFGUS33</dd></div>
+                  <div class="bank-row"><dt>Bank Address</dt><dd>Community Federal Savings Bank<br>89-16 Jamaica Ave, Woodhaven, NY 11421, United States</dd></div>
+                </dl>
+              </div>
+            </div>
+          </div>
+
+          <div class="ornament fade-in">&#9825;</div>
+        </div>
+      </section>
+
+      <!-- SECTION 7: RSVP -->
+      <section id="rsvp" class="section">
+        <div class="section-inner">
+          <h2 class="section-title fade-in">RSVP</h2>
+          <p class="section-subtitle fade-in">We hope to see you there</p>
+          <p class="rsvp-deadline fade-in">Kindly respond by May 15, 2026</p>
+
+          <!-- Step 1: Guest Lookup -->
+          <div id="rsvp-lookup" class="rsvp-form fade-in">
+            <p class="rsvp-subtitle">Find your invitation</p>
+            <div class="form-group">
+              <label for="rsvp-search">Your Full Name</label>
+              <input type="text" id="rsvp-search" placeholder="Enter your name as it appears on your invitation" autocomplete="name">
+            </div>
+            <button type="button" id="rsvp-find-btn" class="btn btn-primary">Find Your Invitation</button>
+            <p id="rsvp-lookup-error" class="rsvp-error hidden"></p>
+          </div>
+
+          <!-- Step 2: Confirm Attendance -->
+          <div id="rsvp-confirm" class="rsvp-confirm hidden">
+            <button type="button" id="rsvp-back-btn" class="rsvp-back-btn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+              Back
+            </button>
+
+            <div class="rsvp-guest-card fade-in">
+              <div class="rsvp-guest-card-inner">
+                <div class="ornament">&#9825;</div>
+                <h3 id="rsvp-guest-name" class="rsvp-card-name"></h3>
+                <div class="ornament">&#10022;</div>
+              </div>
+            </div>
+
+            <div id="rsvp-prewedding-notice" class="rsvp-prewedding-notice hidden">
+              <p class="prewedding-notice-icon">&#10045;</p>
+              <p class="prewedding-notice-title"><strong>The celebrations will begin before the big day!</strong></p>
+              <p class="prewedding-notice-text">If you can, we encourage you to arrive starting <strong>Tuesday</strong>, as we'll be enjoying a few fun plans throughout the week!<br>More details to follow.</p>
+            </div>
+
+            <div class="rsvp-form">
+
+              <!-- PRE-WEDDING EVENT SECTION -->
+              <div id="rsvp-prewedding-section" class="rsvp-event-section hidden">
+                <h3 class="rsvp-event-title">Pre-Wedding</h3>
+                <p class="rsvp-event-date">Thursday 18 June 2026</p>
+                <p class="rsvp-event-note">Details to follow</p>
+
+                <div class="rsvp-event-row">
+                  <div class="rsvp-event-name" id="rsvp-prewed-guest-name"></div>
+                  <div class="radio-group radio-group-inline">
+                    <label class="radio-label">
+                      <input type="radio" name="prewedding_attending" value="yes">
+                      <span class="radio-icon">&#10003;</span>
+                      <span>Attending</span>
+                    </label>
+                    <label class="radio-label">
+                      <input type="radio" name="prewedding_attending" value="no">
+                      <span class="radio-icon">&#10007;</span>
+                      <span>Declining</span>
+                    </label>
+                  </div>
+                </div>
+
+                <div id="rsvp-prewed-plusone-row" class="rsvp-event-row hidden">
+                  <div class="rsvp-plus-one-input">
+                    <input type="text" id="rsvp-prewed-plusone-name" placeholder="Your plus one's name" autocomplete="off">
+                  </div>
+                  <div class="radio-group radio-group-inline">
+                    <label class="radio-label">
+                      <input type="radio" name="plus_one_prewedding_attending" value="yes">
+                      <span class="radio-icon">&#10003;</span>
+                      <span>Attending</span>
+                    </label>
+                    <label class="radio-label">
+                      <input type="radio" name="plus_one_prewedding_attending" value="no">
+                      <span class="radio-icon">&#10007;</span>
+                      <span>Declining</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <!-- WEDDING EVENT SECTION -->
+              <div class="rsvp-event-section">
+                <h3 class="rsvp-event-title">Wedding</h3>
+                <p class="rsvp-event-date">Saturday 20 June 2026</p>
+                <div class="rsvp-event-note" aria-hidden="true"></div>
+
+                <div class="rsvp-event-row">
+                  <div class="rsvp-event-name" id="rsvp-wed-guest-name"></div>
+                  <div class="radio-group radio-group-inline">
+                    <label class="radio-label">
+                      <input type="radio" name="attending" value="yes">
+                      <span class="radio-icon">&#10003;</span>
+                      <span>Attending</span>
+                    </label>
+                    <label class="radio-label">
+                      <input type="radio" name="attending" value="no">
+                      <span class="radio-icon">&#10007;</span>
+                      <span>Declining</span>
+                    </label>
+                  </div>
+                </div>
+
+                <div id="rsvp-wed-plusone-row" class="rsvp-event-row hidden">
+                  <div class="rsvp-plus-one-input">
+                    <input type="text" id="rsvp-plusone-name" placeholder="Your plus one's name" autocomplete="off">
+                  </div>
+                  <div class="radio-group radio-group-inline">
+                    <label class="radio-label">
+                      <input type="radio" name="plus_one_attending" value="yes">
+                      <span class="radio-icon">&#10003;</span>
+                      <span>Attending</span>
+                    </label>
+                    <label class="radio-label">
+                      <input type="radio" name="plus_one_attending" value="no">
+                      <span class="radio-icon">&#10007;</span>
+                      <span>Declining</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <button type="button" id="rsvp-submit-btn" class="btn btn-primary">Send Confirmation</button>
+            </div>
+          </div>
+
+          <!-- Step 2b: Already Submitted -->
+          <div id="rsvp-already-submitted" class="rsvp-already-submitted hidden">
+            <button type="button" id="rsvp-already-back-btn" class="rsvp-back-btn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+              Back
+            </button>
+            <div class="rsvp-guest-card fade-in">
+              <div class="rsvp-guest-card-inner">
+                <div class="ornament">&#9825;</div>
+                <h3 id="rsvp-already-guest-name" class="rsvp-card-name"></h3>
+                <div class="ornament">&#10022;</div>
+              </div>
+            </div>
+            <h3>Already Submitted</h3>
+            <p>Your RSVP has already been recorded. If you need to make changes, please contact us directly.</p>
+          </div>
+
+          <!-- Step 3: Success -->
+          <div id="rsvp-success" class="rsvp-success hidden">
+            <img src="./assets/confetti-CrGrT4ka.gif?v=bfb303f9" alt="" loading="lazy" class="rsvp-confetti">
+            <h3>Thank You!</h3>
+            <p id="rsvp-success-message"></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 8: FOOTER -->
+      <footer id="footer" class="section-footer">
+        <img src="./assets/ball-dance.webp?v=bfb303f9" alt="" loading="lazy" class="footer-bg-img">
+        <div class="footer-overlay"></div>
+        <div class="footer-content fade-in">
+          <div class="footer-divider">
+            <span class="footer-divider-line"></span>
+            <span class="footer-divider-heart">&#9825;</span>
+            <span class="footer-divider-line"></span>
+          </div>
+          <div class="footer-names">Isaac &amp; Corine</div>
+          <p class="footer-date">June 20, 2026</p>
+          <p class="footer-tagline">Two hearts, one journey</p>
+          <div class="footer-monogram">I &amp; C</div>
+        </div>
+      </footer>
+
+    </main>
+
+    <!-- ========== DISCOVER (loaded in-page to keep music playing) ========== -->
+    <div id="discover-content" class="hidden">
+      <main class="discover-page">
+        <section class="discover-hero">
+          <img src="./assets/destinations/beirut.webp?v=bfb303f9" alt="Lebanon" loading="lazy" class="discover-hero-img">
+          <div class="discover-hero-overlay">
+            <h1>Discover Lebanon</h1>
+            <p>While you're here, explore the beauty of this ancient land</p>
+          </div>
+        </section>
+        <section class="section">
+          <div class="section-inner">
+            <div class="discover-mosaic">
+              <div class="dest-card dest-featured fade-in">
+                <img src="./assets/destinations/beirut.webp?v=bfb303f9" alt="Beirut" loading="lazy">
+                <div class="dest-overlay"><h3 class="dest-name">Beirut</h3><p class="dest-desc">Saifi &middot; Downtown &middot; Musee de Sursock &middot; Gemayze &middot; MK</p></div>
+              </div>
+              <div class="dest-card fade-in">
+                <img src="./assets/destinations/baalbek.webp?v=bfb303f9" alt="Baalbek" loading="lazy">
+                <div class="dest-overlay"><h3 class="dest-name">Baalbek</h3><p class="dest-desc">Ancient Roman temples &amp; UNESCO heritage</p></div>
+              </div>
+              <div class="dest-card fade-in">
+                <img src="./assets/destinations/byblos.webp?v=bfb303f9" alt="Byblos" loading="lazy">
+                <div class="dest-overlay"><h3 class="dest-name">Jbeil &mdash; Byblos</h3><p class="dest-desc">One of the oldest continuously inhabited cities</p></div>
+              </div>
+              <div class="dest-card fade-in">
+                <img src="./assets/destinations/batroun.webp?v=bfb303f9" alt="Batroun" loading="lazy">
+                <div class="dest-overlay"><h3 class="dest-name">Batroun</h3><p class="dest-desc">Charming coastal town &amp; seaside dining</p></div>
+              </div>
+              <div class="dest-card fade-in">
+                <img src="./assets/destinations/jeita.webp?v=bfb303f9" alt="Jeita Grotto" loading="lazy">
+                <div class="dest-overlay"><h3 class="dest-name">Jeita Grotto</h3><p class="dest-desc">Stunning limestone caves &amp; underground river</p></div>
+              </div>
+              <div class="dest-card fade-in">
+                <img src="./assets/destinations/harissa.webp?v=bfb303f9" alt="Harissa" loading="lazy">
+                <div class="dest-overlay"><h3 class="dest-name">Harissa</h3><p class="dest-desc">Our Lady of Lebanon &amp; panoramic views</p></div>
+              </div>
+              <div class="dest-card fade-in">
+                <img src="./assets/destinations/beiteddine.webp?v=bfb303f9" alt="Beiteddine Palace" loading="lazy">
+                <div class="dest-overlay"><h3 class="dest-name">Beiteddine Palace</h3><p class="dest-desc">19th-century palace &amp; Mir Amine</p></div>
+              </div>
+              <div class="dest-card fade-in">
+                <img src="./assets/destinations/cedars.webp?v=bfb303f9" alt="Cedars of God" loading="lazy">
+                <div class="dest-overlay"><h3 class="dest-name">Cedars of God</h3><p class="dest-desc">Ancient cedars &amp; Wadi Qannoubine</p></div>
+              </div>
+              <div class="dest-card fade-in">
+                <img src="./assets/destinations/ixsir.webp?v=bfb303f9" alt="Wine Tasting" loading="lazy">
+                <div class="dest-overlay"><h3 class="dest-name">Wine Tasting</h3><p class="dest-desc">Ixsir winery &amp; Lebanese vineyards</p></div>
+              </div>
+              <div class="dest-card fade-in">
+                <img src="./assets/destinations/tannourine.webp?v=bfb303f9" alt="Hiking" loading="lazy">
+                <div class="dest-overlay"><h3 class="dest-name">Hiking</h3><p class="dest-desc">Tannourine &middot; Cedars of God &middot; Barouk</p></div>
+              </div>
+              <div class="dest-card fade-in">
+                <img src="./assets/destinations/marcharbel.webp?v=bfb303f9" alt="Mar Charbel" loading="lazy">
+                <div class="dest-overlay"><h3 class="dest-name">Mar Charbel</h3><p class="dest-desc">Historic monastery &amp; pilgrimage site</p></div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="section" style="min-height: auto; padding: 2rem 1.5rem 4rem;">
+          <div class="section-inner" style="text-align: center;">
+            <a href="#" id="back-to-wedding" class="btn btn-outline">&larr; Back to Wedding</a>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./script.js?v=bfb303f9"></script>
+  </body>
+</html>
