@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Great+Vibes&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="./style.css?v=bfb303f9">
+    <link rel="stylesheet" href="./style.css?v=herofix5">
   </head>
 
   <body>
@@ -70,8 +70,13 @@
 
       <!-- HERO: Birds GIF -->
       <section id="hero" class="section-hero">
-        <div class="hero-gif-wrapper">
-          <video src="./assets/hero-birds.mp4?v=bfb303f9" autoplay loop muted playsinline class="hero-gif"></video>
+        <div class="hero-gif-wrapper" id="hero-gif-wrapper">
+          <video src="./assets/hero-birds.mp4?v=bfb303f9" autoplay loop muted playsinline preload="auto" poster="./assets/hero-birds-poster.jpg?v=bfb303f9" class="hero-gif"></video>
+          <button type="button" id="hero-play-btn" class="hero-play-btn" aria-label="Play garden animation">
+            <svg class="hero-play-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+          </button>
         </div>
         <div class="hero-overlay-text fade-in">
           <span class="hero-names">Isaac &amp; Corine</span>

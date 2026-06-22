@@ -20,6 +20,35 @@
   const bgMusic      = document.getElementById("bg-music");
   const hamburger    = document.getElementById("nav-hamburger");
   const navLinks     = document.getElementById("nav-links");
+  const heroVideo    = document.querySelector(".hero-gif");
+  const heroPlayBtn  = document.getElementById("hero-play-btn");
+  const heroWrapper  = document.getElementById("hero-gif-wrapper");
+
+  function playHeroVideo() {
+    if (!heroVideo || heroVideo.tagName !== "VIDEO") return;
+    heroVideo.muted = true;
+    heroVideo.setAttribute("muted", "");
+    heroVideo.setAttribute("playsinline", "");
+    var attempt = heroVideo.play();
+    if (attempt && attempt.then) {
+      attempt.then(function () {
+        if (heroWrapper) heroWrapper.classList.add("is-playing");
+      }).catch(function () {});
+    } else if (heroWrapper) {
+      heroWrapper.classList.add("is-playing");
+    }
+  }
+
+  if (heroVideo) {
+    heroVideo.load();
+  }
+
+  if (heroPlayBtn) {
+    heroPlayBtn.addEventListener("click", function (event) {
+      event.stopPropagation();
+      playHeroVideo();
+    });
+  }
 
   /* ---------- Intro overlay ---------- */
   let introState = "idle"; // idle | playing | fading
@@ -43,6 +72,7 @@
     if (introState !== "idle") return;
     introState = "playing";
     if (introPrompt) introPrompt.style.display = "none";
+    playHeroVideo();
 
     // Start music FIRST so the user-activation token is used for audio
     bgMusic.currentTime = 2;
@@ -84,6 +114,7 @@
     mainContent.classList.remove("hidden");
     mainNav.classList.remove("hidden");
     musicToggle.classList.remove("hidden");
+    playHeroVideo();
 
     // Smooth fade-in
     mainContent.classList.add("page-fade-in");

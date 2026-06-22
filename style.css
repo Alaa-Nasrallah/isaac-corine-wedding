@@ -99,34 +99,79 @@ body.page-leaving {
   position: relative;
   z-index: 2;
   width: 100%;
-  min-height: calc(100vh - 56px);
   margin-top: 56px;
   display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  padding-top: 10vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0;
   overflow: hidden;
-  background: var(--sage-dark);
+  background: var(--background);
 }
 .hero-gif-wrapper {
-  position: absolute;
-  inset: 0 0 -7px 0;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 640 / 1138;
+  flex-shrink: 0;
 }
 .hero-gif {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top;
-  opacity: 0.85;
+  object-position: center center;
+  opacity: 1;
+  pointer-events: none;
+}
+.hero-gif::-webkit-media-controls {
+  display: none !important;
+}
+.hero-play-btn {
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  top: 58%;
+  transform: translate(-50%, -50%);
+  width: 4.5rem;
+  height: 4.5rem;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.72);
+  color: #587042;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.35s ease, transform 0.2s ease, background 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+.hero-play-btn:hover {
+  background: rgba(255, 255, 255, 0.88);
+  transform: translate(-50%, -50%) scale(1.05);
+}
+.hero-play-icon {
+  width: 1.75rem;
+  height: 1.75rem;
+  margin-left: 0.2rem;
+}
+.hero-gif-wrapper.is-playing .hero-play-btn {
+  opacity: 0;
+  pointer-events: none;
 }
 .hero-overlay-text {
-  position: relative;
-  z-index: 2;
+  position: absolute;
+  top: 8vh;
+  left: 0;
+  right: 0;
+  z-index: 4;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.75rem;
+  pointer-events: none;
 }
 .hero-names {
   font-family: var(--font-script);
@@ -149,12 +194,13 @@ body.page-leaving {
   to   { opacity: 1; transform: translateY(0); }
 }
 @media (max-width: 768px) {
-  .section-hero { padding-top: 8vh; }
+  .hero-overlay-text { top: 8vh; }
+  .hero-play-btn { top: 58%; width: 4rem; height: 4rem; }
   .hero-names { font-size: 4rem; }
   .hero-date-line { font-size: 1.2rem; letter-spacing: 0.25em; }
 }
 @media (max-width: 480px) {
-  .section-hero { padding-top: 12vh; }
+  .hero-overlay-text { top: 10vh; }
   .hero-names { font-size: 3.2rem; }
   .hero-date-line { font-size: 1rem; }
 }
