@@ -629,6 +629,7 @@
   var rsvpConfirm      = document.getElementById("rsvp-confirm");
   var rsvpGuestName    = document.getElementById("rsvp-guest-name");
   var rsvpSubmitBtn    = document.getElementById("rsvp-submit-btn");
+  var rsvpSubmitErr    = document.getElementById("rsvp-submit-error");
   var rsvpSuccess      = document.getElementById("rsvp-success");
   var rsvpMessage      = document.getElementById("rsvp-success-message");
   var rsvpBackBtn      = document.getElementById("rsvp-back-btn");
@@ -825,40 +826,68 @@
     });
   }
 
+  function showRsvpSubmitError(message) {
+    if (!rsvpSubmitErr) return;
+    rsvpSubmitErr.textContent = message;
+    rsvpSubmitErr.classList.remove("hidden");
+  }
+
+  function clearRsvpSubmitError() {
+    if (!rsvpSubmitErr) return;
+    rsvpSubmitErr.textContent = "";
+    rsvpSubmitErr.classList.add("hidden");
+  }
+
   // Step 2: Submit attendance
   if (rsvpSubmitBtn) {
     rsvpSubmitBtn.addEventListener("click", function () {
+      clearRsvpSubmitError();
+
       // Validate wedding attendance
       var attending = document.querySelector('#rsvp-confirm input[name="attending"]:checked');
-      if (!attending) return;
+      if (!attending) {
+        showRsvpSubmitError("Please choose Attending or Declining for the Wedding.");
+        return;
+      }
 
       // Validate pre-wedding selection if visible
       if (currentGuest.prewedding) {
         var prewedding = document.querySelector('#rsvp-confirm input[name="prewedding_attending"]:checked');
-        if (!prewedding) return;
+        if (!prewedding) {
+          showRsvpSubmitError("Please choose Attending or Declining for the Pre-Wedding.");
+          return;
+        }
       }
 
       // Validate plus-one selections if visible
       if (currentGuest.plus_one) {
         var plusOneAttending = document.querySelector('#rsvp-confirm input[name="plus_one_attending"]:checked');
-        if (!plusOneAttending) return;
+        if (!plusOneAttending) {
+          showRsvpSubmitError("Please choose Attending or Declining for your plus one.");
+          return;
+        }
         if (plusOneAttending.value === "yes") {
           var plusOneName = rsvpPlusoneNameInput ? rsvpPlusoneNameInput.value.trim() : "";
           if (!plusOneName) {
             rsvpPlusoneNameInput.focus();
             rsvpPlusoneNameInput.classList.add("input-error");
+            showRsvpSubmitError("Please enter your plus one's name.");
             return;
           }
         }
         if (currentGuest.prewedding) {
           var plusOnePrewedding = document.querySelector('#rsvp-confirm input[name="plus_one_prewedding_attending"]:checked');
-          if (!plusOnePrewedding) return;
+          if (!plusOnePrewedding) {
+            showRsvpSubmitError("Please choose Attending or Declining for your plus one's Pre-Wedding.");
+            return;
+          }
           // Validate pre-wedding plus-one name if attending
           if (plusOnePrewedding.value === "yes") {
             var prewedPlusOneName = rsvpPrewedPlusoneNameInput ? rsvpPrewedPlusoneNameInput.value.trim() : "";
             if (!prewedPlusOneName) {
               rsvpPrewedPlusoneNameInput.focus();
               rsvpPrewedPlusoneNameInput.classList.add("input-error");
+              showRsvpSubmitError("Please enter your plus one's name for the Pre-Wedding.");
               return;
             }
           }
